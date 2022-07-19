@@ -41,27 +41,10 @@ toI = int(args[2])
 #       print(f"Erro ao baixar o codigo: {codigo}")
 #       continue
     
-#BPA
-for i in range(fromI, toI):
-  codigo = c.codigos[i]
-  path = f"{c.bpa_dir}{codigo}/"
-  print(path)
-  if os.path.exists(path): continue
-  
-  while True:
-    # try catch
-    try:
-      print(f"Baixando o código {codigo}")
-      bpa.download(driver, codigo)
-      break
-    except:
-      print(f"Erro ao baixar o codigo: {codigo}")
-      continue
-
-# #BPP
+# #BPA
 # for i in range(fromI, toI):
 #   codigo = c.codigos[i]
-#   path = f"{c.bpp_dir}{codigo}/"
+#   path = f"{c.bpa_dir}{codigo}/"
 #   print(path)
 #   if os.path.exists(path): continue
   
@@ -69,11 +52,28 @@ for i in range(fromI, toI):
 #     # try catch
 #     try:
 #       print(f"Baixando o código {codigo}")
-#       bpp.download(driver, codigo)
+#       bpa.download(driver, codigo)
 #       break
 #     except:
 #       print(f"Erro ao baixar o codigo: {codigo}")
 #       continue
+
+#BPP
+for i in range(fromI, toI):
+  codigo = c.codigos[i]
+  path = f"{c.bpp_dir}{codigo}/"
+  print(path)
+  if os.path.exists(path): continue
+  
+  while True:
+    # try catch
+    try:
+      print(f"Baixando o código {codigo}")
+      bpp.download(driver, codigo)
+      break
+    except:
+      print(f"Erro ao baixar o codigo: {codigo}")
+      continue
 
 
 # https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/CiaAb/ResultBuscaParticCiaAb.aspx?CNPJNome=AMBEV&TipoConsult=C
