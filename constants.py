@@ -1,4 +1,4 @@
-dre_dir = './demonstrativos.nosync/dre2/'
+dre_dir = './demonstrativos.nosync/dre/'
 bpa_dir = './demonstrativos.nosync/bpa/'
 bpp_dir = './demonstrativos.nosync/bpp/'
 listar_doc_url = "https://www.rad.cvm.gov.br/ENET/frmConsultaExternaCVM.aspx/ListarDocumentos"
