@@ -24,39 +24,39 @@ fromI = int(args[1])
 toI = int(args[2])
 
 
-# # DRE
-# for i in range(fromI, toI):
-#   codigo = c.codigos[i]
-#   path = f"{c.dre_dir}{codigo}/"
-#   print(path)
-#   if os.path.exists(path): continue
+# DRE
+for i in range(fromI, toI):
+  codigo = c.codigos[i]
+  path = f"{c.dre_dir}{codigo}/"
+  print(path)
+  if os.path.exists(path): continue
   
-#   while True:
-#     # try catch
-#     try:
-#       print(f"Baixando o código {codigo}")
-#       dre.download(driver, codigo)
-#       break
-#     except:
-#       print(f"Erro ao baixar o codigo: {codigo}")
-#       continue
+  while True:
+    # try catch
+    try:
+      print(f"Baixando o código {codigo}")
+      dre.download(driver, codigo)
+      break
+    except:
+      print(f"Erro ao baixar o codigo: {codigo}")
+      continue
     
-# #BPA
-# for i in range(fromI, toI):
-#   codigo = c.codigos[i]
-#   path = f"{c.bpa_dir}{codigo}/"
-#   print(path)
-#   if os.path.exists(path): continue
+#BPA
+for i in range(fromI, toI):
+  codigo = c.codigos[i]
+  path = f"{c.bpa_dir}{codigo}/"
+  print(path)
+  if os.path.exists(path): continue
   
-#   while True:
-#     # try catch
-#     try:
-#       print(f"Baixando o código {codigo}")
-#       bpa.download(driver, codigo)
-#       break
-#     except:
-#       print(f"Erro ao baixar o codigo: {codigo}")
-#       continue
+  while True:
+    # try catch
+    try:
+      print(f"Baixando o código {codigo}")
+      bpa.download(driver, codigo)
+      break
+    except:
+      print(f"Erro ao baixar o codigo: {codigo}")
+      continue
 
 #BPP
 for i in range(fromI, toI):
