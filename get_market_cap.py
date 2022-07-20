@@ -19,10 +19,10 @@ def close_at_year(hist, year):
             return hist[hist['Date'] == f'{year}-12-{31-i}']['Close']
 
 
-file_name = 'market_caps.csv'
+file_name = 'market_caps_2018-2021.csv'
 if not os.path.exists(file_name):
     with open(file_name, "w") as f:
-        f.write(",".join(['Ticker', '2019 MC', '2020 MC', '2021 MC']) + "\n")
+        f.write(",".join(['Ticker', '2018 MC', '2019 MC', '2020 MC', '2021 MC']) + "\n")
 
 
 def mc_for_ticker(ticker):
@@ -43,19 +43,21 @@ def mc_for_ticker(ticker):
     hist.to_csv('hist.csv')
     hist = pd.read_csv('hist.csv')
 
+    close_2018 = close_at_year(hist, 2018)
     close_2019 = close_at_year(hist, 2019)
     close_2020 = close_at_year(hist, 2020)
     close_2021 = close_at_year(hist, 2021)
 
-    if type(close_2019) == type(None) or type(close_2020) == type(None) or type(close_2021) == type(None):
+    if type(close_2018) == type(None) or type(close_2019) == type(None) or type(close_2020) == type(None) or type(close_2021) == type(None):
         return None
 
+    market_cap_2018 = str(((market_cap / current_price) * close_2018).values[0])
     market_cap_2019 = str(((market_cap / current_price) * close_2019).values[0])
     market_cap_2020 = str(((market_cap / current_price) * close_2020).values[0])
     market_cap_2021 = str(((market_cap / current_price) * close_2021).values[0])
 
     with open(file_name, "a+") as f:
-        f.write(",".join([ticker, market_cap_2019, market_cap_2020, market_cap_2021]) + "\n")
+        f.write(",".join([ticker, market_cap_2018, market_cap_2019, market_cap_2020, market_cap_2021]) + "\n")
 
 # read csv cvm_to_ticker.csv
 with open('cvm_to_ticker.csv', "r") as f:
