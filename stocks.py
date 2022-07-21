@@ -6,7 +6,7 @@ from re import search as re_search
 import dre as dre
 import bpa as bpa
 import bpp as bpp
-import constants as c
+import constants_ as c
 import sys
 import os
 

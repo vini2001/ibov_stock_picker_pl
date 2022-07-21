@@ -4,7 +4,7 @@ import requests
 import json
 from re import search as re_search
 import utils as utils
-import constants as constants
+import constants_ as constants
 import os
 
 def download(driver, codigo):
